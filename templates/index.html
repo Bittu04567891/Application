@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wear Rate Prediction Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script>
+      document
+        .getElementById("prediction-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          
+          const formData = new FormData(event.target);
+          const data = Object.fromEntries(formData.entries());
+          console.log(data); // Logs form data to the console
+        });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>NIT Jamshedpur</h1>
+      <h2>Wear Rate Prediction Dashboard</h2>
+      <img
+        src="https://th.bing.com/th/id/OIP.QxxluGaFTgM3egf2WMkv2AAAAA?rs=1&pid=ImgDetMain"
+        alt="NIT Jamshedpur Logo"
+        class="logo"
+      />
+    </header>
+
+    <div class="member-info">
+      <h3>Mentor & Team Members</h3>
+      <p class="mentor-name">Mentor: <span>Dr. Satish Kumar</span></p>
+      <p class="project-title">Minor Project by:</p>
+      <ul class="team-members">
+        <li>
+          Bittu Kumar Thakur: <span class="reg-no">Reg. No. 2021UGME004</span>
+        </li>
+        <li>
+          Satrajit Brahma: <span class="reg-no">Reg. No. 2021UGME097</span>
+        </li>
+        <li>
+          Piyush Kumar Singh: <span class="reg-no">Reg. No. 2021UGME013</span>
+        </li>
+        <li>
+          Vikash Kumar: <span class="reg-no">Reg. No. 2021UGME042</span>
+        </li>
+      </ul>
+    </div>
+
+    <main>
+      <form id="prediction-form" method="post">
+        <!-- Dropdown for Coating -->
+        <label for="coating">Coating:</label>
+        <select id="coating" name="coating" required>
+          <option value="1" {% if coating == '1' %}selected{% endif %}>Coated</option>
+          <option value="2" {% if coating == '2' %}selected{% endif %}>Uncoated</option>
+        </select>
+
+        <!-- Dropdown for Material -->
+        <label for="material">Material:</label>
+        <select id="material" name="material" required>
+          <option value="1" {% if material == '1' %}selected{% endif %}>Mild Steel</option>
+          <option value="2" {% if material == '2' %}selected{% endif %}>SS202</option>
+          <option value="3" {% if material == '3' %}selected{% endif %}>SS304</option>
+        </select>
+
+        <!-- Dropdown for Ash -->
+        <label for="ash">Ash:</label>
+        <select id="ash" name="ash" required>
+          <option value="1" {% if ash == '1' %}selected{% endif %}>Bottom</option>
+          <option value="2" {% if ash == '2' %}selected{% endif %}>Flyash</option>
+        </select>
+
+        <!-- Input for Time -->
+        <label for="time">Time (minutes):</label>
+        <input type="number" id="time" name="time" step="0.01" value="{{ time }}" required />
+
+        <!-- Input for Concentration -->
+        <label for="concentration">Concentration (%):</label>
+        <input
+          type="number"
+          id="concentration"
+          name="concentration"
+          step="0.01"
+          value="{{ concentration }}"
+          required
+        />
+
+        <!-- Input for Speed -->
+        <label for="speed">Speed (rpm):</label>
+        <input type="number" id="speed" name="speed" value="{{ speed }}" required />
+
+        <!-- Submit Button -->
+        <button type="submit">Predict Wear Rate</button>
+      </form>
+
+      {% if prediction is not none %}
+      <h1>Predicted Wear Rate: {{ prediction }} g/m² min</h1>
+      {% endif %}
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Wear Rate Prediction Project</p>
+    </footer>
+  </body>
+</html>

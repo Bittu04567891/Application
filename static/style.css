@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0078d4;
+    color: white;
+    font-size: medium;
+}
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+img.logo {
+    max-width: 140px;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+  }
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+h1{
+    background-color: salmon;
+}
+button {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+  footer {
+    background: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  .member-info {
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .member-info h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .member-info .mentor-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2980b9;
+  }
+  
+  .member-info .mentor-name span {
+    font-weight: normal;
+    font-size: 18px;
+  }
+  
+  .member-info .project-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #34495e;
+  }
+  
+  .member-info .team-members {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .member-info .team-members li {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+  }
+  
+  .member-info .team-members li .reg-no {
+    font-weight: normal;
+    font-style: italic;
+    color: #7f8c8d;
+  }
+  
+  .member-info ul {
+    padding-left: 20px;
+  }
+  
+  .member-info ul li:hover {
+    background-color: #ecf0f1;
+    transition: background-color 0.3s;
+  }
+  
+  
